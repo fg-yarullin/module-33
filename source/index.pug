@@ -1,0 +1,102 @@
+doctype html
+html(lang = 'ru')
+    head
+        meta(charset = 'utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title Webpack App
+        link(rel='stylesheet', href='css/grid.css')
+    body
+        div.grid-container
+            header.grid-item.menu-logo
+                div.logo
+                    a(href='index.html')
+                        img(src='img/WD.png', alt='Grid')
+                nav.menu
+                    ul.menu__list
+                        each value, index in {'ГЛАВНАЯ': 'index.html', 'ОБ АВТОРЕ': '#about-me', 'РАБОТЫ': '#project', 'ПРОЦЕСС': '#work', 'КОНТАКТЫ': '#social'}
+                            li.menu__item
+                                a.menu__link(href= '' + value)=index
+
+                div.present
+                    div.present__img
+                        img(src='img/Frame.png', alt='Grid')
+                    div.present__design
+                        h1.present__title Дизайн и верстка
+                        p.present__text
+                            | Lorem Ipsum - это текст-'рыба', часто используемый в печати и 
+                            | вэб-дизайне. Lorem Ipsum является стандартной 'рыбой' для текстов
+                            | на латинице с начала XVI века.
+                        button.button.present__button Написать мне
+
+            section.grid-item.about-me(id='about-me')
+                div.about
+                    h2.about__title Обо мне
+                    p.about__text
+                        | Lorem Ipsum - это текст-'рыба', часто используемый в печати и
+                        | вэб-дизайне. Lorem Ipsum является стандартной 'рыбой' для текстов
+                        | на латинице с начала XVI века.
+
+            div.grid-item.project(id='project')
+                div.project__gallery
+                    each _ in Array(6) 
+                        img.project__img(src='img/project.png' alt='Bootstrap')
+
+            section.grid-item.skills
+                div.skills__about
+                    h2.skills__title Мои навыки
+                    ul.skills__list
+                        each _ in Array(3)
+                            li.skills__item Adobe Photoshop
+                                div.line
+                div.skils__photo
+                    img.skils__image(src='img/face.png', alt='my_photo')
+
+            section.grid-item.work(id='work')
+                h2.work__title Как я работаю
+                p.work__text
+                    | Lorem Ipsum - это текст-'рыба', часто используемый в печати и 
+                    | вэб-дизайне. Lorem Ipsum является стандартной 'рыбой' для 
+                    | текстов brна латинице с начала XVI века.
+                div.work__video
+                    iframe.work__iframe(src='http://www.youtube.com/embed/B223fBkhhzc?rel=0', allowfullscreen='')
+                        
+            section.grid-item.task
+                div.task__gallery
+                    div.task__row
+                        img(src='img/notes.png', alt='notes')
+                        div.task__view
+                            img.task__eye(src='img/laptop.png', alt='laptop')
+                        img(src='img/notes.png', alt='notes')
+                        img(src='img/laptop.png', alt='laptop')
+
+                    div.task__row
+                        img(src='img/laptop.png', alt='laptop')
+                        img(src='img/notes.png', alt='notes')
+                        img(src='img/laptop.png', alt='laptop')
+                        img(src='img/notes.png', alt='notes')
+        
+            section.grid-item.micro
+                div.micro__logo
+                    each _ in Array(4)
+                        img(src='img/ms.png', alt='microsoft')
+
+            form.grid-item.form
+                h2.form__title Хотите веб-сайт?
+                p.form__text
+                    | Lorem Ipsum - это текст-'рыба', часто используемый в печати и
+                    | вэб-дизайне. Lorem Ipsum является стандартной 'рыбой' для текстов
+                    | на латинице с начала XVI века.
+                div.form__input-fields
+                    input.form__input(type='text', placeholder='Ваше имя')
+                    input.form__input(type='text', placeholder='Ваш e-mail')
+                textarea.form__textarea(name='message' cols='30', rows='10' placeholder='Сообщение')
+                button.button.form__submit ОТПРАВИТЬ
+
+            footer.grid-item.copyright-social
+                div.copyright
+                    h3.copyright__title Иванов Иван
+                    p.copyright__text (с) 2018. Все права защищены.
+                div.social(id='social')
+                    each _ in Array(3)
+                        a(href='https://vk.com/')
+                            img.social__logo(src='img/vk-social-network-logo.png', alt='vk-logo')
